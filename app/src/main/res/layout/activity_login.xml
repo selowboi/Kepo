@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="com.example.kepo.model.User"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.LoginActivity"
+        android:id="@+id/rl_login"
+        android:layout_margin="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_logo_sm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/logo_sm"
+            android:layout_above="@id/tv_tagline"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/tv_tagline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/make_stalking_easier"
+            android:textAlignment="center"
+            android:layout_marginTop="12dp"
+            android:layout_above="@+id/ll_login"/>
+
+        <LinearLayout
+            android:id="@+id/ll_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/username"
+                android:text="@={user.username}"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/login_bg"
+                android:padding="10dp"
+                android:inputType="text"/>
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                android:text="@={user.password}"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/login_bg"
+                android:padding="10dp"
+                android:inputType="textPassword"/>
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:text="@string/login"
+                android:layout_marginTop="12dp"
+                app:backgroundTint="@color/dark_blue" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_copyright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_2020_by_mobile_team"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true" />
+
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/dark_blue"/>
+
+
+    </RelativeLayout>
+
+</layout>
